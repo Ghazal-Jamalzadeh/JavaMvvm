@@ -31,4 +31,9 @@
             app:enterAnim="@anim/nav_default_exit_anim"
             app:exitAnim="@android:anim/accelerate_decelerate_interpolator" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_RecyclerView"
+        android:name="com.jmzd.ghazal.javamvvm.view.Fragment_RecyclerView"
+        android:label="fragment__recycler_view"
+        tools:layout="@layout/fragment__recycler_view" />
 </navigation>
