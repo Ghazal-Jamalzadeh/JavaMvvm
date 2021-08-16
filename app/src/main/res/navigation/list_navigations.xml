@@ -15,6 +15,10 @@
             app:destination="@id/fragment_nav2"
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="arg"
+            app:argType="string"
+            android:defaultValue='"ghazal"' />
     </fragment>
     <fragment
         android:id="@+id/fragment_nav2"

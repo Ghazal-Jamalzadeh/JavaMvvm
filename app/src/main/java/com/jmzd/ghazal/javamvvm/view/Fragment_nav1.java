@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.jmzd.ghazal.javamvvm.R;
@@ -78,8 +77,9 @@ Button clickBtn ;
         clickBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavDirections navAction = Fragment_nav1Directions.actionFragmentNav1ToFragmentNav2();
-                Navigation.findNavController(clickBtn).navigate(navAction);
+                Bundle bundle = new Bundle() ;
+                bundle.putString("name","Coca");
+                Navigation.findNavController(clickBtn).navigate(R.id.action_fragment_nav1_to_fragment_nav2,bundle);
             }
         });
     }
