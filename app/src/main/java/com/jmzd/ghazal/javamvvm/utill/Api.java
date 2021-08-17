@@ -12,7 +12,7 @@ public interface Api {
     Single<List<Datamodel>> Listdatamodel();
 }
   //  The @GET annotation tells the client which HTTP method to use and on which resource, so for example, by providing a base URL of “https://api.github.com” it will send the request to “https://api.github.com/users”.
-    //میتوانستیم به جای single از observable استفاده کنیم و فرقی نمی کرد.
+//میتوانستیم به جای single از observable استفاده کنیم و فرقی نمی کرد.
 //Observer is a behavioral design pattern that allows some objects to notify other objects about changes in their state.
 //RxJava (and its derivatives like RxGroovy & RxScala) has developed an Observable variant called “Single.”
 //

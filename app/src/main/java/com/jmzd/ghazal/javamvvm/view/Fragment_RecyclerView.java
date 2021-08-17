@@ -27,6 +27,8 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class Fragment_RecyclerView extends Fragment {
+//    RecyclerView recyclerView ;
+
     private static final String TAG = "Fragment_RecyclerView";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,6 +75,7 @@ public class Fragment_RecyclerView extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__recycler_view, container, false);
+//        recyclerView = view.findViewById(R.id.recyclerview);
         return  view ;
     }
 
@@ -89,6 +92,9 @@ public class Fragment_RecyclerView extends Fragment {
                     Log.d(TAG , datamodels.get(i).getTitle());
                     Log.d(TAG , datamodels.get(i).getDes());
                 }
+//                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//                Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels);//,Fragment_RecyclerView.this::Clickitems
+//                recyclerView.setAdapter(adapter);
             }
         });
     }

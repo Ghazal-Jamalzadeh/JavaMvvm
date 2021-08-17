@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.jmzd.ghazal.javamvvm.model.Datamodel"
+            />
+    </data>
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layoutDirection="rtl"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/Tv_title"
+            android:fontFamily="@font/font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/Im_post"
+            android:textSize="13dp"
+            android:layout_marginTop="20dp"
+            android:text="@{data.title}">
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/Im_post"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:image="@{data.imageurl}"
+            />
+        <TextView
+            android:id="@+id/Tv_date"
+            android:fontFamily="@font/font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textSize="13dp"
+            android:layout_margin="5dp"
+            android:layout_alignParentLeft="true"
+            android:text="@{data.date}">
+        </TextView>
+
+        <TextView
+            android:id="@+id/Tv_view"
+            android:fontFamily="@font/font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textSize="13dp"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@+id/Im_post"
+            android:text="@{data.view}">
+        </TextView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>
