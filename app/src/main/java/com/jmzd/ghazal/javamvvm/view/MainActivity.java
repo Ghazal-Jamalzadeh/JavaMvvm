@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         viewModel_random = ViewModelProviders.of(this).get(ViewModel_Random.class);
 //        Log.d(TAG , viewModel_random.check());
 
-        activityMainBinding.setViewmodel(viewModel_random); // name attribute in xml file = setViewmode
+        activityMainBinding.setViewModel(viewModel_random); // name attribute in xml file = setViewmode
 
         MutableLiveData<String> observer = viewModel_random.check();
         observer.observe(this, new Observer<String>() {

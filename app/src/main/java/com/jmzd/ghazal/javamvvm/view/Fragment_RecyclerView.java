@@ -12,9 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jmzd.ghazal.javamvvm.R;
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
+import com.jmzd.ghazal.javamvvm.view.adapter.Adapter_RecyclerView;
 import com.jmzd.ghazal.javamvvm.viewModel.ViewModel_ListPost;
 
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +30,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class Fragment_RecyclerView extends Fragment {
-//    RecyclerView recyclerView ;
+    RecyclerView recyclerView ;
 
     private static final String TAG = "Fragment_RecyclerView";
     // TODO: Rename parameter arguments, choose names that match
@@ -75,7 +78,7 @@ public class Fragment_RecyclerView extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__recycler_view, container, false);
-//        recyclerView = view.findViewById(R.id.recyclerview);
+        recyclerView = view.findViewById(R.id.recyclerview);
         return  view ;
     }
 
@@ -92,9 +95,9 @@ public class Fragment_RecyclerView extends Fragment {
                     Log.d(TAG , datamodels.get(i).getTitle());
                     Log.d(TAG , datamodels.get(i).getDes());
                 }
-//                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//                Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels);//,Fragment_RecyclerView.this::Clickitems
-//                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels);//,Fragment_RecyclerView.this::Clickitems
+                recyclerView.setAdapter(adapter);
             }
         });
     }

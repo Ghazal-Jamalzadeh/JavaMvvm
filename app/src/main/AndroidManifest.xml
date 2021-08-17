@@ -22,7 +22,9 @@
         <activity android:name=".view.NavigationActivity">
 
         </activity>
-        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name=".view.MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
