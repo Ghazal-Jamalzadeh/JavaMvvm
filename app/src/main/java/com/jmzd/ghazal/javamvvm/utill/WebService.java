@@ -27,3 +27,7 @@ public class WebService {
         return api.Listdatamodel();
     }
 }
+
+//Retrofit provides a convenient builder for constructing our required object. It needs the base URL which is going to be used for every service call and a converter factory – which takes care of the parsing of data we're sending and also the responses we get.
+//
+//In this example, we're going to use the GsonConverterFactory, which is going to map our JSON data to the User class we defined earlier.
