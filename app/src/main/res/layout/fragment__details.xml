@@ -1,19 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.Fragment_Details">
+<layout >
+    <data>
+        <variable
+            name="data_show"
+            type="com.jmzd.ghazal.javamvvm.model.DataShowMore" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tvBundle"
-        android:textSize="30sp"
-        android:layout_margin="20dp"
-        android:textColor="@color/teal_200"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/hello_blank_fragment" />
+        <variable
+            name="imageurl"
+            type="String" />
+    </data>
+    <androidx.cardview.widget.CardView
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:viewBindingIgnore="true"
+        android:layoutDirection="rtl"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@android:color/holo_blue_light">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/Im_back"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_arrow_back_white_24dp"
+                        android:layout_centerVertical="true">
+
+                    </ImageView>
+                    <TextView
+                        android:id="@+id/Tv_title"
+                        android:fontFamily="@font/font"
+                        android:layout_marginRight="5dp"
+                        android:layout_toEndOf="@+id/Im_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13dp"
+                        android:textColor="@color/white"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:text="@{data_show.title}">
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:layout_below="@+id/toolbar"
+                android:id="@+id/Im_post"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:imageurl="@{imageurl}"
+                />
+            <TextView
+                android:id="@+id/Tv_date"
+                android:fontFamily="@font/font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/Im_post"
+                android:layout_margin="5dp"
+                android:text="@{data_show.date}">
+            </TextView>
+
+            <TextView
+                android:id="@+id/Tv_view"
+                android:fontFamily="@font/font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Im_post"
+                android:textSize="13dp"
+                android:layout_margin="5dp"
+                android:text="@{data_show.view}">
+            </TextView>
+
+            <TextView
+                android:id="@+id/Tv_des"
+                android:fontFamily="@font/font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/Tv_view"
+                android:text="@{data_show.des}">
+            </TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

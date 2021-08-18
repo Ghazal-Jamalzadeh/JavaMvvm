@@ -24,6 +24,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         navController = Navigation.findNavController(this, R.id.mainFragment);
         NavigationUI.setupActionBarWithNavController(this, navController);
+
+        getSupportActionBar().hide();//hide toolbar
     }
 
     @Override

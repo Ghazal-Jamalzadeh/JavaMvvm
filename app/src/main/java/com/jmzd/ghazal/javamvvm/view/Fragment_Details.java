@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.jmzd.ghazal.javamvvm.R;
+import com.jmzd.ghazal.javamvvm.databinding.FragmentDetailsBinding;
+import com.jmzd.ghazal.javamvvm.model.DataShowMore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +22,8 @@ import com.jmzd.ghazal.javamvvm.R;
  */
 public class Fragment_Details extends Fragment {
     TextView tvBundle;
+    FragmentDetailsBinding binding ;
+    ImageView ImBack ;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,9 +69,17 @@ public class Fragment_Details extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment__details, container, false);
-        tvBundle = view.findViewById(R.id.tvBundle);
-        tvBundle.setText(getArguments().getString("title"));
-        return  view ;
+       // View view = inflater.inflate(R.layout.fragment__details, container, false);
+//        tvBundle = view.findViewById(R.id.tvBundle);
+//        tvBundle.setText(getArguments().getString("title"));
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment__details,container,false);
+        binding.setDataShow(new DataShowMore(getArguments().getString("title"),getArguments().getString("date"),getArguments().getString("view"),getArguments().getString("des")));
+        binding.setImageurl(getArguments().getString("imageurl"));
+        ImBack=binding.ImBack;
+        ImBack.setOnClickListener(view -> {
+            Navigation.findNavController(ImBack).popBackStack();
+        });
+        return  binding.getRoot();
+       // return  view ;
     }
 }
