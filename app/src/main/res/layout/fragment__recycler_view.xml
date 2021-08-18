@@ -5,12 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.Fragment_RecyclerView"
-    android:background="@color/bg">
+    android:background="@color/bg"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto">
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        wheel:matProg_barColor="#FF5722"
+        wheel:matProg_progressIndeterminate="true"
+        tools:ignore="MissingConstraints" />
 </RelativeLayout>
 </layout>

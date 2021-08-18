@@ -23,6 +23,7 @@ import com.jmzd.ghazal.javamvvm.model.Datamodel;
 import com.jmzd.ghazal.javamvvm.utill.Click_item;
 import com.jmzd.ghazal.javamvvm.view.adapter.Adapter_RecyclerView;
 import com.jmzd.ghazal.javamvvm.viewModel.ViewModel_ListPost;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +36,7 @@ import java.util.List;
  */
 public class Fragment_RecyclerView extends Fragment implements Click_item {
     RecyclerView recyclerView ;
+    ProgressWheel progress_wheel;
     FragmentRecyclerViewBinding binding; //برای فعال شدن ویو بایندینگ کافی است layout اصلی در فایل xml  را درون یک تگ <layout> قرار دهیم.
 
     private static final String TAG = "Fragment_RecyclerView";
@@ -86,6 +88,7 @@ public class Fragment_RecyclerView extends Fragment implements Click_item {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment__recycler_view,container,false);
         //recyclerView = view.findViewById(R.id.recyclerview);// old way
         recyclerView = binding.recyclerview;
+        progress_wheel=binding.progressWheel;
         //return  view ; // old way
         return  binding.getRoot();
     }
@@ -106,6 +109,12 @@ public class Fragment_RecyclerView extends Fragment implements Click_item {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels,Fragment_RecyclerView.this::Clickitems);//قبلا this کافی بود ولی در mvvm  به این شکل می نویسسم
                 recyclerView.setAdapter(adapter);
+            }
+        });
+        viewmodel_listpost.liveData_looging.observe(getActivity(), new Observer<Boolean>() { // progress wheel
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                progress_wheel.setVisibility(View.GONE);
             }
         });
     }

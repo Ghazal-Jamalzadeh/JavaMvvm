@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
 public class ViewModel_ListPost extends ViewModel {
 
     private MutableLiveData<List<Datamodel>> listMutableLiveData=new MutableLiveData<>();
-    public MutableLiveData<Boolean> liveData_looging=new MutableLiveData<>();
+    public MutableLiveData<Boolean> liveData_looging=new MutableLiveData<>();// progress wheel
     //این در واقع یک ناظر هستت بر کاارهای ما و زمانی که کارهای مورد نظر ما انجام شد و observer را دریافت کردیم و LiveData ما را بر میگرداند کارهایی را انجام میدهد. و بعد در متد onCleared آن را پاک میکنیم. یعنی یه جور ماظر یک بار مصرف هست.
     private CompositeDisposable compositeDisposable=new CompositeDisposable();
     public MutableLiveData<List<Datamodel>> mutableLiveData(){
