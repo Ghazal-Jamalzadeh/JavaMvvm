@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jmzd.ghazal.javamvvm.R;
+import com.jmzd.ghazal.javamvvm.databinding.FragmentRecyclerViewBinding;
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
 import com.jmzd.ghazal.javamvvm.view.adapter.Adapter_RecyclerView;
 import com.jmzd.ghazal.javamvvm.viewModel.ViewModel_ListPost;
@@ -31,6 +33,7 @@ import java.util.List;
  */
 public class Fragment_RecyclerView extends Fragment {
     RecyclerView recyclerView ;
+    FragmentRecyclerViewBinding binding; //برای فعال شدن ویو بایندینگ کافی است layout اصلی در فایل xml  را درون یک تگ <layout> قرار دهیم.
 
     private static final String TAG = "Fragment_RecyclerView";
     // TODO: Rename parameter arguments, choose names that match
@@ -77,9 +80,12 @@ public class Fragment_RecyclerView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment__recycler_view, container, false);
-        recyclerView = view.findViewById(R.id.recyclerview);
-        return  view ;
+        //View view = inflater.inflate(R.layout.fragment__recycler_view, container, false); // old way
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment__recycler_view,container,false);
+        //recyclerView = view.findViewById(R.id.recyclerview);// old way
+        recyclerView = binding.recyclerview;
+        //return  view ; // old way
+        return  binding.getRoot();
     }
 
     @Override
