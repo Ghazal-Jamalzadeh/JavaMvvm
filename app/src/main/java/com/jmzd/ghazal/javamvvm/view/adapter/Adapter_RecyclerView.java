@@ -10,15 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jmzd.ghazal.javamvvm.R;
 import com.jmzd.ghazal.javamvvm.databinding.ItemsBinding;
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
+import com.jmzd.ghazal.javamvvm.utill.Click_item;
 
 import java.util.List;
 
 public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerView.viewhodler> {
     List<Datamodel> list;
-   // Click_items click_items;
-    public Adapter_RecyclerView(List<Datamodel> list){ // , Click_items click_items
+    Click_item click_items;
+    public Adapter_RecyclerView(List<Datamodel> list, Click_item click_items){
         this.list=list;
-       // this.click_items=click_items;
+        this.click_items=click_items;
     }
     @NonNull
     @Override
@@ -32,9 +33,9 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
     public void onBindViewHolder(@NonNull viewhodler holder, int position) {
         Datamodel datamodel=list.get(position);
         holder.binding.setData(datamodel); // we set the data in xml
-//        holder.itemView.setOnClickListener(view -> {
-//            click_items.Clickitems(datamodel);
-//        });
+        holder.itemView.setOnClickListener(view -> { // lambda - set On click listener
+            click_items.Clickitems(datamodel);
+        });
     }
 
     @Override

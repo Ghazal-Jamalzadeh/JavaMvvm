@@ -13,12 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jmzd.ghazal.javamvvm.R;
 import com.jmzd.ghazal.javamvvm.databinding.FragmentRecyclerViewBinding;
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
+import com.jmzd.ghazal.javamvvm.utill.Click_item;
 import com.jmzd.ghazal.javamvvm.view.adapter.Adapter_RecyclerView;
 import com.jmzd.ghazal.javamvvm.viewModel.ViewModel_ListPost;
 
@@ -31,7 +33,7 @@ import java.util.List;
  * Use the {@link Fragment_RecyclerView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_RecyclerView extends Fragment {
+public class Fragment_RecyclerView extends Fragment implements Click_item {
     RecyclerView recyclerView ;
     FragmentRecyclerViewBinding binding; //برای فعال شدن ویو بایندینگ کافی است layout اصلی در فایل xml  را درون یک تگ <layout> قرار دهیم.
 
@@ -102,11 +104,22 @@ public class Fragment_RecyclerView extends Fragment {
                     Log.d(TAG , datamodels.get(i).getDes());
                 }
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels);//,Fragment_RecyclerView.this::Clickitems
+                Adapter_RecyclerView adapter=new Adapter_RecyclerView(datamodels,Fragment_RecyclerView.this::Clickitems);//قبلا this کافی بود ولی در mvvm  به این شکل می نویسسم
                 recyclerView.setAdapter(adapter);
             }
         });
     }
 
 
+    @Override
+    public void Clickitems(Datamodel datamodel) {
+        Bundle bundle = new Bundle();
+        bundle.putString("id",datamodel.getId()); // می شود فقط id را فرستاد و بقیه موارد را بر اساس id در سمت دیگر دریافت کرد.
+        bundle.putString("title",datamodel.getTitle());
+        bundle.putString("imageurl",datamodel.getImageurl());
+        bundle.putString("view",datamodel.getView());
+        bundle.putString("date",datamodel.getDate());
+        bundle.putString("des",datamodel.getDes());
+        Navigation.findNavController(recyclerView).navigate(R.id.action_fragment_RecyclerView2_to_fragment_Details2,bundle);
+    }
 }

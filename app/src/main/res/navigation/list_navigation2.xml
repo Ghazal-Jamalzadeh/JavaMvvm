@@ -9,5 +9,18 @@
         android:id="@+id/fragment_RecyclerView2"
         android:name="com.jmzd.ghazal.javamvvm.view.Fragment_RecyclerView"
         android:label="fragment__recycler_view"
-        tools:layout="@layout/fragment__recycler_view" />
+        tools:layout="@layout/fragment__recycler_view" >
+        <action
+            android:id="@+id/action_fragment_RecyclerView2_to_fragment_Details2"
+            app:destination="@id/fragment_Details" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Details"
+        android:name="com.jmzd.ghazal.javamvvm.view.Fragment_Details"
+        android:label="fragment__details"
+        tools:layout="@layout/fragment__details" >
+        <action
+            android:id="@+id/action_fragment_Details_to_fragment_RecyclerView2"
+            app:destination="@id/fragment_RecyclerView2" />
+    </fragment>
 </navigation>
