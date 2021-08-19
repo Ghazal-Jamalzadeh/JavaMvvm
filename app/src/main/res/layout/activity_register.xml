@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="Data_reg"
+            type="com.jmzd.ghazal.javamvvm.viewModel.ViewModel_Register" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.Register_Acitivty"
+        android:background="@color/bg">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="20dp"
+            android:padding="50dp"
+            app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_margin="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <EditText
+                android:hint="نام خود را وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_reg.name}"
+                >
+
+            </EditText>
+
+            <EditText
+                android:hint="شماره موبایل را وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_reg.mobile}"
+                >
+
+            </EditText>
+
+
+            <EditText
+                android:hint="لطفا ایمیل را وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_reg.email}"
+                >
+
+            </EditText>
+
+            <EditText
+                android:hint="رمز عبور وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_reg.pass}">
+
+            </EditText>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ثبت نام"
+                android:onClick="@{Data_reg::Click_Send_data}"
+                >
+
+            </Button>
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

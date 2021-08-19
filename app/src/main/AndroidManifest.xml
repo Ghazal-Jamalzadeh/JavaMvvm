@@ -12,18 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JavaMvvm"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.LoginActivity">
+        <activity android:name=".view.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.RecyclerViewActivity">
+        <activity android:name=".view.LoginActivity">
 
         </activity>
-        <activity android:name=".view.NavigationActivity"></activity>
-        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name=".view.RecyclerViewActivity"></activity>
+        <activity android:name=".view.NavigationActivity" />
+        <activity android:name=".view.MainActivity" />
     </application>
 
 </manifest>

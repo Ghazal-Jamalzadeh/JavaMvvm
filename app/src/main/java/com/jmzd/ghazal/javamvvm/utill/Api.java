@@ -19,6 +19,11 @@ public interface Api {
     @POST("login.php") // در متد post داده هایی را (موبایل ، پسورد) به سمت سرور ارسال می کنیم که در فایل login.php با متد post دریافت می شود.
     Single<Status> singlestaus(@Field("mobile")String mobile, @Field("pass")String pass);
 
+    @FormUrlEncoded
+    @POST("reg.php")
+    Single<Status> Single_register(@Field("n")String n,@Field("m")String m,@Field("e")String e,@Field("p")String p);
+
+
 }
   //  The @GET annotation tells the client which HTTP method to use and on which resource, so for example, by providing a base URL of “https://api.github.com” it will send the request to “https://api.github.com/users”.
 //میتوانستیم به جای single از observable استفاده کنیم و فرقی نمی کرد.

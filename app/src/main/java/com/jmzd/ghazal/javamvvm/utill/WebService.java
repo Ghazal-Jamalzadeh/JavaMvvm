@@ -32,6 +32,10 @@ public class WebService {
         return api.singlestaus(m,p);
     }
 
+    public Single<Status> Single_reg(String n,String m,String e,String p){
+        return api.Single_register(n,m,e,p);
+    }
+
 }
 
 //Retrofit provides a convenient builder for constructing our required object. It needs the base URL which is going to be used for every service call and a converter factory – which takes care of the parsing of data we're sending and also the responses we get.
