@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
 public class ViewModel_Login extends ViewModel {
     public MutableLiveData<String> StrEmpty=new MutableLiveData<>();
     public MutableLiveData<Boolean> Bol_logincheck=new MutableLiveData<>();
-  //  public MutableLiveData<String> Userid=new MutableLiveData<>();
+    public MutableLiveData<String> Userid=new MutableLiveData<>();
 
     CompositeDisposable disposable=new CompositeDisposable();
     public  String mobile=null;
@@ -40,7 +40,7 @@ public class ViewModel_Login extends ViewModel {
                         public void onSuccess(Status status) {
                             if(status.getStatus().equals("ok")){
                                 Bol_logincheck.setValue(true);
-                               // Userid.setValue(status.getUser_id());
+                                Userid.setValue(status.getUser_id());
                             }
                             else
                             {   Bol_logincheck.setValue(false);
