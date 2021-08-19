@@ -1,15 +1,24 @@
 package com.jmzd.ghazal.javamvvm.utill;
 
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
+import com.jmzd.ghazal.javamvvm.model.Status;
 
 import java.util.List;
 
 import io.reactivex.Single;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface Api {
-    @GET("index.php")
+    @GET("index.php") // در متد get صرفا داده را از سرور دریافت می کنیم و چیزی ارسال نمیکنیم به سرور
     Single<List<Datamodel>> Listdatamodel();
+
+    @FormUrlEncoded
+    @POST("login.php") // در متد post داده هایی را (موبایل ، پسورد) به سمت سرور ارسال می کنیم که در فایل login.php با متد post دریافت می شود.
+    Single<Status> singlestaus(@Field("mobile")String mobile, @Field("pass")String pass);
+
 }
   //  The @GET annotation tells the client which HTTP method to use and on which resource, so for example, by providing a base URL of “https://api.github.com” it will send the request to “https://api.github.com/users”.
 //میتوانستیم به جای single از observable استفاده کنیم و فرقی نمی کرد.

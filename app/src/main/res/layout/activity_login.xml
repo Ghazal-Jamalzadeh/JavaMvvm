@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+    <data>
+        <variable
+            name="Data_login"
+            type="com.jmzd.ghazal.javamvvm.viewModel.ViewModel_Login" />
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.Acitivty_Login"
+        android:background="@color/bg">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_margin="20dp"
+    android:padding="50dp"
+    app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_margin="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <EditText
+                android:hint="شماره موبایل را وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_login.mobile}"
+                >
+
+            </EditText>
+
+            <EditText
+                android:hint="رمز عبور وارد کنید..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={Data_login.pass}">
+
+            </EditText>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ورود"
+                android:onClick="@{Data_login::Click_Send_data}"
+                >
+
+            </Button>
+
+        </LinearLayout>
+</androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

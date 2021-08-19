@@ -1,6 +1,7 @@
 package com.jmzd.ghazal.javamvvm.utill;
 
 import com.jmzd.ghazal.javamvvm.model.Datamodel;
+import com.jmzd.ghazal.javamvvm.model.Status;
 
 import java.util.List;
 
@@ -26,6 +27,11 @@ public class WebService {
     public Single<List<Datamodel>> listSingle(){
         return api.Listdatamodel();
     }
+
+    public Single<Status> Sta_login(String m, String p){
+        return api.singlestaus(m,p);
+    }
+
 }
 
 //Retrofit provides a convenient builder for constructing our required object. It needs the base URL which is going to be used for every service call and a converter factory – which takes care of the parsing of data we're sending and also the responses we get.
