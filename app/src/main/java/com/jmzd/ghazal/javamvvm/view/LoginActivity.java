@@ -19,7 +19,7 @@ ActivityLoginBinding binding ;
         super.onCreate(savedInstanceState);
 
         binding= DataBindingUtil.setContentView(this, R.layout.activity_login);
-        ViewModel_Login viewmodel_login= ViewModelProviders.of(this).get(ViewModel_Login.class);
+        ViewModel_Login viewmodel_login=  ViewModelProviders.of(this).get(ViewModel_Login.class);
         binding.setDataLogin(viewmodel_login);
 
         MutableLiveData<String> str=viewmodel_login.StrEmpty;

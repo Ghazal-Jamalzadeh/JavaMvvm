@@ -12,19 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JavaMvvm"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.WorkerActivity_onTime">
-
-        </activity>
-        <activity android:name=".view.WorkerActivity" >
+        <activity android:name=".view.RoomDbActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.SliderActivity">
+        <activity android:name=".view.WorkerActivity_onTime"></activity>
+        <activity android:name=".view.WorkerActivity">
 
         </activity>
+        <activity android:name=".view.SliderActivity"></activity>
         <activity android:name=".view.RegisterActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.RecyclerViewActivity" />

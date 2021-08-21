@@ -68,5 +68,7 @@ dependencies {
     implementation 'com.pnikosis:materialish-progress:1.7'
     //work-runtime
     implementation "androidx.work:work-runtime:2.5.0"
-
+    //RoomDb
+    implementation "androidx.room:room-runtime:2.3.0"
+    annotationProcessor "androidx.room:room-compiler:2.3.0"
 }
